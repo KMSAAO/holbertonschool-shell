@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod a+x -type d
+find . -type chmod a+x
