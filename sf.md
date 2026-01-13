@@ -34,22 +34,58 @@ All validation rules are enforced in the **Service Layer** before persistence to
 
 ## 3. Automated Unit Tests
 ```bash
-python3 -m unittest discover tests
+python3 -m unittest discover tests -v
 ```
 The following output confirms that all automated unit tests passed successfully:
 ```bash
-test_create_amenity (tests.test_amenity.TestAmenityAPI.test_create_amenity) ... ok
-test_create_amenity_invalid_data (tests.test_amenity.TestAmenityAPI.test_create_amenity_invalid_data) ... ok
-test_delete_amenity (tests.test_amenity.TestAmenityAPI.test_delete_amenity) ... ok
-test_get_amenity (tests.test_amenity.TestAmenityAPI.test_get_amenity) ... ok
-test_update_amenity (tests.test_amenity.TestAmenityAPI.test_update_amenity) ... ok
-test_create_review (tests.test_review.TestReviewAPI.test_create_review) ... ok
-test_update_review (tests.test_review.TestReviewAPI.test_update_review) ... ok
-test_delete_review (tests.test_review.TestReviewAPI.test_delete_review) ... ok
-test_create_user (tests.test_user.TestUserAPI.test_create_user) ... ok
-test_create_place (tests.test_place.TestPlaceAPI.test_create_place) ... ok
+test_create_amenity (test_amenity.TestAmenityAPI.test_create_amenity) ... ok
+test_create_amenity_invalid_data (test_amenity.TestAmenityAPI.test_create_amenity_invalid_data) ... ok
+test_delete_amenity (test_amenity.TestAmenityAPI.test_delete_amenity) ... ok
+test_delete_amenity_not_found (test_amenity.TestAmenityAPI.test_delete_amenity_not_found) ... ok
+test_get_amenity (test_amenity.TestAmenityAPI.test_get_amenity) ... ok
+test_get_amenity_not_found (test_amenity.TestAmenityAPI.test_get_amenity_not_found) ... ok
+test_update_amenity (test_amenity.TestAmenityAPI.test_update_amenity) ... ok
+test_update_amenity_not_found (test_amenity.TestAmenityAPI.test_update_amenity_not_found) ... ok
+test_create_place_invalid_data (test_place.TestPlaceAPI.test_create_place_invalid_data)
+Test creating a place with invalid data (e.g. negative price) ... ok
+test_create_place_invalid_owner (test_place.TestPlaceAPI.test_create_place_invalid_owner)
+Test creating a place with non-existent owner_id ... ok
+test_create_place_success (test_place.TestPlaceAPI.test_create_place_success)
+Test creating a place with valid data ... ok
+test_delete_place (test_place.TestPlaceAPI.test_delete_place)
+Test deleting a place ... ok
+test_get_place (test_place.TestPlaceAPI.test_get_place)
+Test retrieving a place by ID ... ok
+test_update_place (test_place.TestPlaceAPI.test_update_place)
+Test updating place details ... ok
+test_create_review (test_review.TestReviewAPI.test_create_review) ... ok
+test_create_review_invalid_data (test_review.TestReviewAPI.test_create_review_invalid_data) ... ok
+test_delete_review (test_review.TestReviewAPI.test_delete_review) ... ok
+test_get_review_info (test_review.TestReviewAPI.test_get_review_info) ... ok
+test_get_review_not_found (test_review.TestReviewAPI.test_get_review_not_found) ... ok
+test_update_review (test_review.TestReviewAPI.test_update_review) ... ok
+test_update_review_not_found (test_review.TestReviewAPI.test_update_review_not_found) ... ok
+test_active_user (test_user.TestUserAPI.test_active_user) ... ok
+test_delete_user_not_found (test_user.TestUserAPI.test_delete_user_not_found) ... ok
+test_delete_user_success (test_user.TestUserAPI.test_delete_user_success) ... ok
+test_delete_user_with_linked_place (test_user.TestUserAPI.test_delete_user_with_linked_place) ... ok
+test_email_already_registered (test_user.TestUserAPI.test_email_already_registered) ... ok
+test_email_format (test_user.TestUserAPI.test_email_format) ... ok
+test_email_or_password_not_exists (test_user.TestUserAPI.test_email_or_password_not_exists) ... ok
+test_email_validation (test_user.TestUserAPI.test_email_validation) ... ok
+test_get_info (test_user.TestUserAPI.test_get_info) ... ok
+test_length_of_password (test_user.TestUserAPI.test_length_of_password) ... ok
+test_login (test_user.TestUserAPI.test_login) ... ok
+test_name_length (test_user.TestUserAPI.test_name_length) ... ok
+test_password_type (test_user.TestUserAPI.test_password_type) ... ok
+test_register_user (test_user.TestUserAPI.test_register_user) ... ok
+test_register_user_missing_fields (test_user.TestUserAPI.test_register_user_missing_fields) ... ok
+test_update_non_existent_user (test_user.TestUserAPI.test_update_non_existent_user) ... ok
+test_update_user_invalid_data (test_user.TestUserAPI.test_update_user_invalid_data) ... ok
+test_update_user_success (test_user.TestUserAPI.test_update_user_success) ... ok
 
-Ran 12 tests in 0.452s
+----------------------------------------------------------------------
+Ran 39 tests in 0.286s
 
 OK
 ```
