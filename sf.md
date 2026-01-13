@@ -33,9 +33,11 @@ All validation rules are enforced in the **Service Layer** before persistence to
 ---
 
 ## 3. Automated Unit Tests
-
+```bash
+python3 -m unittest discover tests
+```
 The following output confirms that all automated unit tests passed successfully:
-
+```bash
 test_create_amenity (tests.test_amenity.TestAmenityAPI.test_create_amenity) ... ok
 test_create_amenity_invalid_data (tests.test_amenity.TestAmenityAPI.test_create_amenity_invalid_data) ... ok
 test_delete_amenity (tests.test_amenity.TestAmenityAPI.test_delete_amenity) ... ok
@@ -50,7 +52,7 @@ test_create_place (tests.test_place.TestPlaceAPI.test_create_place) ... ok
 Ran 12 tests in 0.452s
 
 OK
-
+```
 ---
 
 ## 4. Manual Testing (cURL)
