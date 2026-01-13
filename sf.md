@@ -51,9 +51,6 @@ Ran 12 tests in 0.452s
 
 OK
 
-yaml
-Copy code
-
 ---
 
 ## 4. Manual Testing (cURL)
@@ -68,16 +65,17 @@ curl -X POST http://127.0.0.1:5000/api/v1/users/ \
   "email": "john.doe@example.com",
   "password": "securepassword"
 }'
-json
-Copy code
+```
+```bash
 {
   "id": "3587063f-3430-4e2b-a45b-7b7c25c3c04f",
   "first_name": "John",
   "last_name": "Doe",
   "email": "john.doe@example.com"
 }
-B) Amenities Endpoint – Create Amenity
-bash
+```
+### B) Amenities Endpoint – Create Amenity
+```bash
 Copy code
 curl -X POST http://127.0.0.1:5000/api/v1/amenities/ \
 -H "Content-Type: application/json" \
@@ -86,17 +84,17 @@ curl -X POST http://127.0.0.1:5000/api/v1/amenities/ \
   "description": "High-speed internet",
   "status": "active"
 }'
-json
-Copy code
+```
+```bash
 {
   "id": "1fa85f64-5717-4562-b3fc-2c963f66afa6",
   "amenity_name": "WiFi",
   "description": "High-speed internet",
   "status": "active"
 }
-C) Places Endpoint – Create Place
-bash
-Copy code
+```
+### C) Places Endpoint – Create Place
+```bash
 curl -X POST http://127.0.0.1:5000/api/v1/places/ \
 -H "Content-Type: application/json" \
 -d '{
@@ -107,8 +105,8 @@ curl -X POST http://127.0.0.1:5000/api/v1/places/ \
   "longitude": -118.2437,
   "owner_id": "3587063f-3430-4e2b-a45b-7b7c25c3c04f"
 }'
-json
-Copy code
+```
+```bash
 {
   "id": "8a9b2c3d-4e5f-6g7h-8i9j-0k1l2m3n4o5p",
   "title": "Cozy Apartment",
@@ -117,9 +115,9 @@ Copy code
   "longitude": -118.2437,
   "owner_id": "3587063f-3430-4e2b-a45b-7b7c25c3c04f"
 }
-D) Reviews Endpoint – Create Review
-bash
-Copy code
+```
+### D) Reviews Endpoint – Create Review
+```bash
 curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
 -H "Content-Type: application/json" \
 -d '{
@@ -128,17 +126,17 @@ curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
   "rating": 5,
   "comment": "Amazing place!"
 }'
-json
-Copy code
+```
+```bash
 {
   "id": "review-uuid-1234",
   "place_id": "8a9b2c3d-4e5f-6g7h-8i9j-0k1l2m3n4o5p",
   "rating": 5,
   "comment": "Amazing place!"
 }
-Invalid Rating (Edge Case)
-bash
-Copy code
+```
+### Invalid Rating (Edge Case)
+```bash
 curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
 -H "Content-Type: application/json" \
 -d '{
@@ -146,12 +144,13 @@ curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
   "rating": 6,
   "comment": "Invalid"
 }'
-json
-Copy code
+```
+```bash
 {
   "message": "rating must be between 1 and 5"
 }
-5. Conclusion
+```
+### 5. Conclusion
 All API endpoints have been successfully implemented and validated.
 
 Validation rules are correctly enforced
