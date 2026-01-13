@@ -95,7 +95,7 @@ OK
 
 ### A) Users Endpoint – Create User
 ```bash
-curl -X POST http://127.0.0.1:5000/api/v1/users/ \
+curl -X POST http://127.0.0.1:5050/api/v1/users/ \
 -H "Content-Type: application/json" \
 -d '{
   "first_name": "John",
@@ -115,7 +115,7 @@ curl -X POST http://127.0.0.1:5000/api/v1/users/ \
 ### B) Amenities Endpoint – Create Amenity
 ```bash
 Copy code
-curl -X POST http://127.0.0.1:5000/api/v1/amenities/ \
+curl -X POST http://127.0.0.1:5050/api/v1/amenities/ \
 -H "Content-Type: application/json" \
 -d '{
   "amenity_name": "WiFi",
@@ -133,7 +133,7 @@ curl -X POST http://127.0.0.1:5000/api/v1/amenities/ \
 ```
 ### C) Places Endpoint – Create Place
 ```bash
-curl -X POST http://127.0.0.1:5000/api/v1/places/ \
+curl -X POST http://127.0.0.1:5050/api/v1/places/ \
 -H "Content-Type: application/json" \
 -d '{
   "title": "Cozy Apartment",
@@ -156,7 +156,7 @@ curl -X POST http://127.0.0.1:5000/api/v1/places/ \
 ```
 ### D) Reviews Endpoint – Create Review
 ```bash
-curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
+curl -X POST http://127.0.0.1:5050/api/v1/reviews/ \
 -H "Content-Type: application/json" \
 -d '{
   "place_id": "8a9b2c3d-4e5f-6g7h-8i9j-0k1l2m3n4o5p",
@@ -175,7 +175,7 @@ curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
 ```
 ### Invalid Rating (Edge Case)
 ```bash
-curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
+curl -X POST http://127.0.0.1:5050/api/v1/reviews/ \
 -H "Content-Type: application/json" \
 -d '{
   "place_id": "8a9b2c3d-4e5f-6g7h-8i9j-0k1l2m3n4o5p",
